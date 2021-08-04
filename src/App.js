@@ -1,9 +1,8 @@
 import React from "react";
+import "normalize-css";
 
-export default function App() {
-	return (
-		<div className='App'>
-			<p>hello</p>
-		</div>
-	);
-}
+const App = () => {
+	return <h1>Hello World</h1>;
+};
+
+export default App;
