@@ -1,8 +1,10 @@
 import React from "react";
 import "normalize-css";
+import "./App.css";
+import { Form } from "./components";
 
 const App = () => {
-	return <h1>Hello World</h1>;
+	return <Form />;
 };
 
 export default App;
