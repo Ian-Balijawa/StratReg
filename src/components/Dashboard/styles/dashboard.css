@@ -1,0 +1,93 @@
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.main {
+	margin-left: 2rem;
+	width: 100%;
+}
+
+.main {
+	margin-left: 2rem;
+	width: 100%;
+}
+
+.main__header {
+	display: flex;
+	width: 100%;
+	height: 5rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo__input {
+	width: 20rem;
+	display: flex;
+	justify-content: space-between;
+}
+.logo__input > img {
+	width: 3rem;
+	border-radius: 50%;
+}
+.header__profile {
+	display: flex;
+	width: 30rem;
+	justify-content: space-between;
+}
+.profile__name {
+	display: flex;
+	justify-content: space-evenly;
+	margin-right: 1rem;
+	align-items: center;
+	width: 20rem;
+}
+.profile__name img {
+	border: 2px solid rgb(135, 153, 158);
+	width: 3.4rem;
+	margin-right: 1rem;
+	border-radius: 50%;
+}
+.profile__name svg {
+	width: 100%;
+}
+
+.profile__alert {
+	display: flex;
+	justify-content: space-evenly;
+	width: 20rem;
+	align-items: center;
+}
+.alert__icon {
+	margin-left: 4rem;
+	margin-bottom: 0.6rem;
+}
+svg {
+	cursor: pointer;
+	width: 2rem;
+	height: 2rem;
+	color: rgb(0, 255, 221);
+	margin-top: 1rem;
+}
+.profile__alert {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.logo__input input {
+	border: 2px solid rgb(228, 228, 228);
+	border-radius: 50px;
+	padding: 1rem 1.4rem;
+	margin-left: 2rem;
+	width: 100%;
+	font-size: 13px;
+}
+
+.main__card {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}

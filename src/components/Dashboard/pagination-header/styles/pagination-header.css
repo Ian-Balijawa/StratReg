@@ -1,0 +1,59 @@
+.card__container__header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.card__header p {
+	font-weight: bold;
+	font-size: larger;
+}
+
+.card__pagination {
+	display: flex;
+	width: 45%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.card__pagination .spans {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination__btns {
+	display: flex;
+	margin-left: 1rem;
+	width: 56%;
+	height: 4rem;
+	align-items: center;
+}
+
+.pagination__btns button {
+	background: white;
+	color: black;
+	box-shadow: 0 0 0 0.1px;
+	height: 2.3rem;
+	margin-right: 1rem;
+	border-radius: 3px;
+}
+.pagination__btns button:hover {
+	background: rgb(51, 122, 255);
+	border: none;
+	outline: none;
+}
+
+.btn-group {
+	display: flex;
+	width: 40%;
+	margin-right: 1rem;
+}
+.pagination__btns div:first-of-type button {
+	width: 4rem;
+	border: none;
+	outline: none;
+	color: white;
+	text-transform: uppercase;
+	background: rgb(51, 122, 255);
+}

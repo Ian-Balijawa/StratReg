@@ -1,0 +1,66 @@
+.card__container {
+	margin: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.card {
+	margin: 1rem 0;
+	border: 1px solid rgb(236, 236, 236);
+	width: 25rem;
+	border-radius: 10px;
+	display: flex;
+	cursor: pointer;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.card:hover {
+	transition: all 0.3s ease;
+	background: rgba(0, 0, 0, 0.1);
+	border: 1px solid rgb(94, 110, 250);
+}
+
+.card__check {
+	margin: 1rem;
+}
+.card__profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card__profile img {
+	border: 2px solid rgb(135, 153, 158);
+
+	width: 5rem;
+	border-radius: 50%;
+}
+
+.card__text .name {
+	text-align: center;
+	font-weight: bold;
+	font-size: larger;
+}
+
+.card__text .country {
+	text-align: center;
+}
+
+.card__info {
+	border-top: 1px solid rgb(236, 236, 236);
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+}
+.card__info span {
+	height: 100%;
+	background-color: rgb(236, 236, 236);
+	width: 1px;
+}
+
+.card__info p:last-of-type {
+	font-weight: bold;
+	font-size: larger;
+}

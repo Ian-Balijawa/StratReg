@@ -1,0 +1,21 @@
+.sidebar__profile {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sidebar__profile > img {
+	width: 6rem;
+	border-radius: 50%;
+}
+.sidebar__profile__text p:first-of-type {
+	font-weight: bold;
+	font-size: larger;
+}
+.sidebar__profile__text p:last-of-type {
+	font-weight: lighter;
+	text-align: center;
+	font-size: 10px;
+}
