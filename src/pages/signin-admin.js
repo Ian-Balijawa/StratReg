@@ -5,10 +5,9 @@ import { HeaderContainer, FooterContainer } from "../containers";
 import { Form } from "../components";
 import * as ROUTES from "../constants/routes";
 
-const Signin = () => {
+const SigninAdmin = () => {
 	const { firebase } = useContext(FirebaseContext);
-	const history = useHistory("");
-
+	const history = useHistory();
 	const [emailAddress, setEmailAddress] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
@@ -38,7 +37,7 @@ const Signin = () => {
 		<>
 			<HeaderContainer>
 				<Form>
-					<Form.Title>Sign in</Form.Title>
+					<Form.Title>Admin login</Form.Title>
 					{error && <Form.Error>{error}</Form.Error>}
 					<Form.Base onSubmit={handleSignin} method='POST'>
 						<Form.Input
@@ -61,7 +60,7 @@ const Signin = () => {
 					</Form.Base>
 
 					<Form.Text>
-						Don't have an account?
+						Not an Admin?{" "}
 						<Form.Link to={ROUTES.SIGNUP}> Sign-up now</Form.Link>
 					</Form.Text>
 					<Form.TextSmall>
@@ -75,4 +74,4 @@ const Signin = () => {
 	);
 };
 
-export default Signin;
+export default SigninAdmin;

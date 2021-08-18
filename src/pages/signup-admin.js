@@ -4,7 +4,7 @@ import { HeaderContainer, FooterContainer } from "../containers";
 import { Form } from "../components";
 import * as ROUTES from "../constants/routes";
 
-const Signup = () => {
+const SignupAdmin = () => {
 	const { firebase } = useContext(FirebaseContext);
 
 	const [firstName, setFirstName] = useState("");
@@ -12,8 +12,6 @@ const Signup = () => {
 	const [emailAddress, setEmailAddress] = useState("");
 	const [password, setPassword] = useState("");
 	const [repassword, setRepassword] = useState("");
-	const [course, setCourse] = useState("");
-	const [institution, setInstitution] = useState("");
 	const [error, setError] = useState("");
 
 	const isInValid =
@@ -21,8 +19,6 @@ const Signup = () => {
 		password === "" ||
 		emailAddress === "" ||
 		repassword !== password ||
-		institution === "" ||
-		course === "" ||
 		lastName === "";
 
 	const handleSignup = async e => {
@@ -48,7 +44,7 @@ const Signup = () => {
 		<>
 			<HeaderContainer>
 				<Form>
-					<Form.Title>Sign Up</Form.Title>
+					<Form.Title>Admins only</Form.Title>
 					{error && <Form.Error>{error}</Form.Error>}
 					<Form.Base onSubmit={handleSignup} method='POST'>
 						<Form.Input
@@ -82,26 +78,12 @@ const Signup = () => {
 							autocomplete='off'
 							onChange={({ target }) => setRepassword(target.value)}
 						/>
-						<Form.Input
-							type='text'
-							value={course}
-							placeholder='Course'
-							autocomplete='off'
-							onChange={({ target }) => setCourse(target.value)}
-						/>
-						<Form.Input
-							type='text'
-							value={institution}
-							placeholder='Institution'
-							autocomplete='off'
-							onChange={({ target }) => setInstitution(target.value)}
-						/>
 
 						<Form.Submit disabled={isInValid} type='submit'>
 							Sign up
 						</Form.Submit>
 						<Form.Text>
-							Already a User?
+							Already an Admin?
 							<Form.Link to={ROUTES.SIGNIN}> Sign In Now</Form.Link>
 						</Form.Text>
 						<Form.TextSmall>
@@ -116,4 +98,4 @@ const Signup = () => {
 	);
 };
 
-export default Signup;
+export default SignupAdmin;

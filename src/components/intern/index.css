@@ -1,0 +1,19 @@
+.main__intern__table {
+	display: flex;
+	flex-direction: column;
+}
+
+.action__btns {
+	margin-top: 1rem;
+	justify-content: space-evenly;
+}
+
+.card__intern__preview {
+	height: 18rem;
+	display: flex;
+	flex-direction: row;
+	overflow-x: visible;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 export function IsUserRedirect({ user, loggedInPath, children, ...restProps }) {
@@ -22,9 +21,8 @@ export function ProtectedRoute({ user, children, ...restProps }) {
 		<Route
 			{...restProps}
 			render={({ location }) => {
-				if (user) {
-					return children;
-				}
+				if (user) return children;
+
 				if (!user) {
 					return (
 						<Redirect

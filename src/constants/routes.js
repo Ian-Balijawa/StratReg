@@ -1,6 +1,10 @@
 export const HOME = "/";
 export const SIGNUP = "/signup";
 export const SIGNIN = "/signin";
+export const PROFILE = "/profile";
+export const PROJECTS = "/projects";
 export const DASHBOARD = "/dashboard";
 export const INTERNS = "/interns";
-export const NOT_FOUND = "./not-found";
+export const NOT_FOUND = "/not-found";
+export const ADMIN_SIGNIN = "/signin-admin";
+export const ADMIN_SIGNUP = "/signup-admin";

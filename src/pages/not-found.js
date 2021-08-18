@@ -1,4 +1,4 @@
-import HeaderContainer from "../containers/header";
+import { HeaderContainer } from "../containers";
 
 const Notfound = () => {
 	return (

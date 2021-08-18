@@ -1,0 +1,11 @@
+.container {
+	display: grid;
+	grid: "a" 100px "b" 1fr;
+}
+
+.container > div {
+	width: 5rem;
+	height: 5rem;
+	border: 1px solid white;
+	background-color: gold;
+}

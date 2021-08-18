@@ -44,8 +44,8 @@ const PaginationHeader = () => {
 						<button type='button'>All</button>
 					</div>
 					<div className='btn-group'>
-						<button type='button'>Unread</button>
-						<button type='button'>Important</button>
+						<button type='button'>Earlier</button>
+						<button type='button'>Recent</button>
 					</div>
 				</div>
 			</div>

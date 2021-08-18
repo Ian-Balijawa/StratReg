@@ -1,4 +1,6 @@
 import { InternContainer } from "../containers";
-export default function ManageInterns({ children }) {
+const ManageInterns = ({ children }) => {
 	return <InternContainer />;
-}
+};
+
+export default ManageInterns;

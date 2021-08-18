@@ -14,6 +14,7 @@
 
 .header__profile {
 	display: flex;
+	margin-right: 1rem;
 	justify-content: space-between;
 }
 .profile__name {
@@ -24,28 +25,8 @@
 .profile__name > div:last-of-type {
 	width: 100%;
 	height: 100%;
+	margin-top: 2rem;
 }
 .profile__alert {
 	display: flex;
-}
-.list__item {
-	display: flex;
-	height: 4rem;
-	width: 100%;
-	justify-content: safe;
-	flex-direction: row;
-	align-items: center;
-}
-.list__item:hover {
-	transition: all 0.1s ease-in;
-	font-weight: bold;
-}
-
-.list__item div:last-of-type {
-	width: 2rem;
-	margin-left: 1rem;
-}
-.svg {
-	width: 2rem;
-	margin-left: -1.6rem;
 }

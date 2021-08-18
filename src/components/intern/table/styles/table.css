@@ -1,0 +1,104 @@
+.table__container {
+	margin-top: 10rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.table__actions {
+	display: flex;
+}
+.table__container > div {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.table__container .action__btns {
+	margin-left: 5rem;
+}
+.table__container .action__btns button {
+	width: 4rem;
+	height: 3rem;
+	border-radius: 4px;
+	margin: 0 0.4rem;
+	color: white;
+	background: rgb(21, 66, 148);
+}
+.table__container .action__btns button:hover {
+	background: rgb(0, 89, 255);
+}
+.table__container .action__btns button:active {
+	z-index: -999999;
+}
+
+.table__container .table__actions > input {
+	margin-left: 10rem;
+	width: 30%;
+	font-size: larger;
+	padding: 1.3rem;
+	border-radius: 3rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table {
+	font-size: 12px;
+	box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.2);
+	margin: 2rem;
+	padding: 1rem;
+}
+
+table tr {
+	cursor: pointer;
+	width: 100%;
+}
+
+table td {
+	padding: 0.6rem;
+	text-align: center;
+}
+
+table tr td:first-of-type {
+	width: 2rem;
+}
+thead {
+	height: 3.2rem;
+}
+thead:hover {
+	transition: all 0.1s ease-in;
+	color: white;
+	background-color: rgb(74, 174, 241);
+}
+
+/* table body */
+
+tbody td input {
+	width: 5rem;
+	height: auto;
+}
+
+tbody th {
+	margin-top: 15rem;
+	width: 8%;
+
+	cursor: pointer;
+}
+
+tbody tr {
+	background: #ffff;
+	height: 3rem;
+}
+tbody tr:hover {
+	background: rgb(211, 214, 214);
+	font-size: large;
+	font-weight: bold;
+}
+
+tbody td img {
+	width: 3rem;
+	border-radius: 50%;
+}
+/* th {
+	background: rgb(45, 255, 227);
+	cursor: pointer;
+} */

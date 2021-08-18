@@ -1,5 +1,7 @@
 import { DashboardContainer } from "../containers";
 
-export default function Dashboard({ children }) {
+const Dashboard = ({ children }) => {
 	return <DashboardContainer />;
-}
+};
+
+export default Dashboard;

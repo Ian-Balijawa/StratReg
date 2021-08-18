@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+
+#playground files
+/playground
+
 # vscode settings
 .vscode
 # testing
