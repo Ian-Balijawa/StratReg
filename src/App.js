@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "normalize-css";
 import "./App.css";
 import * as ROUTES from "./constants/routes";
@@ -11,7 +11,6 @@ import SigninAdmin from "./pages/signin-admin";
 import SignupAdmin from "./pages/signup-admin";
 import UserProfile from "./pages/user-profile";
 import Dashboard from "./pages/dashboard";
-import Projects from "./pages/projects";
 import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
 import useAuthListener from "./hooks/auth-listener";
 
@@ -39,7 +38,10 @@ const App = () => {
 				<Route exact path={ROUTES.INTERNS} component={ManageInterns} />
 				<Route exact path={ROUTES.PROFILE} component={UserProfile} />
 				<Route exact path={ROUTES.ADMIN_SIGNUP} component={SignupAdmin} />
-				<Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+
+				<ProtectedRoute user={user} path={ROUTES.Dashboard} exact>
+					<Dashboard />
+				</ProtectedRoute>
 				<IsUserRedirect
 					path={ROUTES.HOME}
 					user={user}
