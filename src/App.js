@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "normalize-css";
+import "normalize.css";
 import "./App.css";
 import * as ROUTES from "./constants/routes";
 import Home from "./pages/home";
@@ -11,7 +11,7 @@ import SigninAdmin from "./pages/signin-admin";
 import SignupAdmin from "./pages/signup-admin";
 import UserProfile from "./pages/user-profile";
 import Dashboard from "./pages/dashboard";
-import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
+import { IsUserRedirect } from "./helpers/routes";
 import useAuthListener from "./hooks/auth-listener";
 
 const App = () => {
@@ -26,6 +26,7 @@ const App = () => {
 					exact>
 					<Signin />
 				</IsUserRedirect>
+
 				<IsUserRedirect
 					path={ROUTES.SIGNUP}
 					user={user}
@@ -39,9 +40,11 @@ const App = () => {
 				<Route exact path={ROUTES.PROFILE} component={UserProfile} />
 				<Route exact path={ROUTES.ADMIN_SIGNUP} component={SignupAdmin} />
 
-				<ProtectedRoute user={user} path={ROUTES.Dashboard} exact>
+				{/* <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact>
 					<Dashboard />
-				</ProtectedRoute>
+				</ProtectedRoute> */}
+				<Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+
 				<IsUserRedirect
 					path={ROUTES.HOME}
 					user={user}
