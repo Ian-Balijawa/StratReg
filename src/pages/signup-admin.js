@@ -16,10 +16,10 @@ const SignupAdmin = () => {
 
 	const isInValid =
 		firstName === "" ||
+		lastName === "" ||
 		password === "" ||
 		emailAddress === "" ||
-		repassword !== password ||
-		lastName === "";
+		repassword !== password;
 
 	const handleSignup = async e => {
 		e.preventDefault();
@@ -32,6 +32,19 @@ const SignupAdmin = () => {
 				displayName: firstName,
 				photoURL: Math.floor(Math.random() * 5) + 1,
 			});
+
+			firebase
+				.firestore()
+				.collection("users")
+				.add({
+					first_name: firstName,
+					last_name: lastName,
+					email: emailAddress,
+					admin: true,
+				})
+				.then(ref => {
+					console.log(`added a user with id ${ref.id}`);
+				});
 		} catch (error) {
 			setFirstName("");
 			setLastName("");
