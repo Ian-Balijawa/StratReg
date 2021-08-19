@@ -1,9 +1,8 @@
 export const config = {
-	apiKey: "AIzaSyDKZUCCFUq3Qz5mMOlUUtyUjoGmqskENVg",
-	authDomain: "netflix-clone-7e95d.firebaseapp.com",
-	projectId: "netflix-clone-7e95d",
-	storageBucket: "netflix-clone-7e95d.appspot.com",
-	messagingSenderId: "225033179113",
-	appId: "1:225033179113:web:cf2aa138dba614819d4578",
-	measurementId: "G-7WQ8EW0DTP",
+	apiKey: "AIzaSyCyePemE0qwor5S-K6cflbTU1F0lDMF1zg",
+	authDomain: "stratreg-f1732.firebaseapp.com",
+	projectId: "stratreg-f1732",
+	storageBucket: "stratreg-f1732.appspot.com",
+	messagingSenderId: "622484064342",
+	appId: "1:622484064342:web:b75c1ba0a3e66574e753f7",
 };

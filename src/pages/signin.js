@@ -13,18 +13,15 @@ const Signin = () => {
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 
-	// check input elements are valid
 	const isInValid = password === "" || emailAddress === "";
 
 	const handleSignin = event => {
 		event.preventDefault();
 
-		// firebase work here
 		firebase
 			.auth()
 			.signInWithEmailAndPassword(emailAddress, password)
 			.then(() => {
-				// push to the  browse page
 				history.push(ROUTES.DASHBOARD);
 			})
 			.catch(error => {

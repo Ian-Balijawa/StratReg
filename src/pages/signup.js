@@ -33,9 +33,23 @@ const Signup = () => {
 				.auth()
 				.createUserWithEmailAndPassword(emailAddress, password);
 			result.user.updateProfile({
-				displayName: firstName,
+				displayName: firstName || "user",
 				photoURL: Math.floor(Math.random() * 5) + 1,
 			});
+
+			firebase
+				.firestore()
+				.collection("users")
+				.add({
+					first_name: firstName,
+					last_name: lastName,
+					email: emailAddress,
+					institution,
+					course,
+				})
+				.then(ref => {
+					console.log(`added a user with id ${ref.id}`);
+				});
 		} catch (error) {
 			setFirstName("");
 			setLastName("");

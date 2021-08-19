@@ -1,8 +1,13 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { HOME } from "../../../constants/routes";
+import { FirebaseContext } from "../../../context/firebase";
 import "./styles/header-dashboard.css";
 
 const HeaderDashboard = () => {
+	const { firebase } = useContext(FirebaseContext);
+	const user = firebase.auth().currentUser || {};
+
 	return (
 		<div className='main__header'>
 			<div className='logo__input'>
@@ -28,7 +33,26 @@ const HeaderDashboard = () => {
 					<div>
 						<img src='/images/admin.jpg' alt='profile_picture' />
 					</div>
-					<div>Balijawa Ian</div>
+					<div>{user.displayName}</div>
+					<button
+						onClick={() => {
+							firebase.auth().signOut();
+						}}>
+						Sign out
+						<svg
+							xmlns='http://www.w3.org/2000/svg'
+							class='h-6 w-6'
+							fill='none'
+							viewBox='0 0 24 24'
+							stroke='currentColor'>
+							<path
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								stroke-width='2'
+								d='M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1'
+							/>
+						</svg>
+					</button>
 				</div>
 			</div>
 		</div>
