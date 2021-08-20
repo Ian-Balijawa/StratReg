@@ -5,6 +5,7 @@ import { FirebaseContext } from "../../../context/firebase";
 import "./styles/header-dashboard.css";
 
 const HeaderDashboard = () => {
+	const history = useHistory();
 	const { firebase } = useContext(FirebaseContext);
 	const user = firebase.auth().currentUser || {};
 
@@ -38,8 +39,13 @@ const HeaderDashboard = () => {
 					</div>
 					<div>{user.displayName}</div>
 					<button
-						onClick={() => {
-							firebase.auth().signOut();
+						onClick={e => {
+							e.preventDefault();
+							firebase
+								.auth()
+								.signOut()
+								.then(console.log("user logged out"));
+							history.push("/");
 						}}>
 						Sign out
 						<svg

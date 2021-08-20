@@ -30,33 +30,43 @@ const UserProfile = () => {
 								src={`/images/avatars/${user.photoURL}.png`}
 								alt='profile pic'
 							/>
-							<p> {`${activeUser.first_name} ${activeUser.last_name}`} </p>
+							<p>
+								{" "}
+								{activeUser &&
+									`${activeUser.first_name} ${activeUser.last_name}`}{" "}
+							</p>
 						</div>
 						<div className='user__info'>
 							<div>
 								<p>First Name</p>
-								<p>{`${activeUser.first_name}`} </p>
+								<p>
+									{activeUser &&
+										`${activeUser.first_name.toUpperCase()}`}{" "}
+								</p>
 							</div>
 							<div>
 								<p>Last Name</p>
-								<p>{`${activeUser.last_name.toUpperCase()}`} </p>
+								<p>
+									{activeUser &&
+										`${activeUser.last_name.toUpperCase()}`}{" "}
+								</p>
 							</div>
 							<div>
 								<p>Phone</p>
-								<p>{`${activeUser.phone || "Unknown"}`} </p>
+								<p>{activeUser && `${activeUser.phone || "Unknown"}`} </p>
 							</div>
 							<div>
 								<p>Email</p>
-								<p>{`${activeUser.email}`}</p>
+								<p>{activeUser && `${activeUser.email}`}</p>
 							</div>
 
 							<div>
 								<p>Institution</p>
-								<p>{`${activeUser.institution}`}</p>
+								<p>{activeUser && `${activeUser.institution}`}</p>
 							</div>
 							<div>
 								<p>Course</p>
-								<p>{`${activeUser.first_name}`} </p>
+								<p>{activeUser && `${activeUser.first_name}`} </p>
 							</div>
 						</div>
 					</div>

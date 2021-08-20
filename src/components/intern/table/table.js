@@ -6,38 +6,11 @@ import "./styles/table.css";
 export default function Table() {
 	const [searchElement, setSearchElement] = useState("");
 	const users = useUsers();
-	const [userList, setUserList] = useState(users);
-
-	const handleSearch = searchKey => {
-		firebase
-			.firestore()
-			.collection("users")
-			.where("first_name", "==", searchKey)
-			.get()
-			.then(snap => {
-				setUserList(snap.docs);
-			})
-			.catch(error => console.log(error));
-	};
-
 	return (
 		<>
 			<div className='table__container'>
 				<div>
 					<div className='table__actions'>
-						<input
-							type='text'
-							placeholder='search for interns'
-							value={searchElement}
-							onKeyDown={e => {
-								if (e.key === "Enter") {
-									handleSearch(searchElement);
-								}
-							}}
-							onChange={({ target }) => {
-								setSearchElement(target.value);
-							}}
-						/>
 						<div className='action__btns'>
 							<button>Add</button>
 							<button>Edit</button>
@@ -54,13 +27,14 @@ export default function Table() {
 								<th> Last Name</th>
 								<th>Institution</th>
 								<th> Email </th>
+								<th> Course </th>
 								<th> Phone</th>
 								<th> Projects </th>
 								<th>Academic Supervisor</th>
 							</tr>
 						</thead>
 						<tbody>
-							{userList.map(item => (
+							{users.map(item => (
 								<tr key={item.id}>
 									<td>
 										{
@@ -77,6 +51,7 @@ export default function Table() {
 									<td> {item.last_name} </td>
 									<td> {item.institution} </td>
 									<td> {item.email} </td>
+									<td> {item.course} </td>
 									<td> {item.phone || "Unknown"} </td>
 									<td> {item.projects || "Unassigned"} </td>
 									<td>

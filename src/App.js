@@ -21,7 +21,7 @@ const App = () => {
 				<IsUserRedirect
 					path={ROUTES.SIGNIN}
 					user={user}
-					loggedInPath={ROUTES.DASHBOARD}
+					loggedInPath={ROUTES.INTERNS}
 					exact>
 					<Home />
 				</IsUserRedirect>
@@ -29,7 +29,7 @@ const App = () => {
 				<IsUserRedirect
 					path={ROUTES.SIGNUP}
 					user={user}
-					loggedInPath={ROUTES.DASHBOARD}
+					loggedInPath={ROUTES.INTERNS}
 					exact>
 					<Signup />
 				</IsUserRedirect>
@@ -39,15 +39,13 @@ const App = () => {
 				<Route exact path={ROUTES.PROFILE} component={UserProfile} />
 				<Route exact path={ROUTES.ADMIN_SIGNUP} component={SignupAdmin} />
 
-				<ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact>
+				<ProtectedRoute user={user} path={ROUTES.INTERNS} exact>
 					<Dashboard />
 				</ProtectedRoute>
-				{/* <Route exact path={ROUTES.DASHBOARD} component={Dashboard} /> */}
-
 				<IsUserRedirect
 					path={ROUTES.HOME}
 					user={user}
-					loggedInPath={ROUTES.DASHBOARD}
+					loggedInPath={ROUTES.INTERNS}
 					exact>
 					<Home />
 				</IsUserRedirect>
