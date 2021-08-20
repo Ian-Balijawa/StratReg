@@ -1,27 +1,25 @@
 import { useState, useContext } from "react";
-import data from "../../../fixtures/tableData.json";
+import useUsers from "../../../hooks/use-users";
+import { firebase } from "../../../lib/firebase.prod";
 import "./styles/table.css";
 
-export default function Table({ handleSearch }) {
-	const [checkeditem, setCheckedItem] = useState(false);
-	const [dataList, setDataList] = useState([]);
+export default function Table() {
 	const [searchElement, setSearchElement] = useState("");
+	const users = useUsers();
+	const [userList, setUserList] = useState(users);
 
-	const handleSort = sortColumn => {
-		const newData = [...data];
-
-		// if (sortColumn in newData) {
-		// 	const a = newData["sortColumn"];
-		// 	const b = newData["sortColumn"];
-		// 	const sorted = newData.sort((a, b) => (a > b ? 1 : a === b ? 0 : -1));
-		// 	setData(sorted);
-		// }
+	const handleSearch = searchKey => {
+		firebase
+			.firestore()
+			.collection("users")
+			.where("first_name", "==", searchKey)
+			.get()
+			.then(snap => {
+				setUserList(snap.docs);
+			})
+			.catch(error => console.log(error));
 	};
 
-	const headleSearch = searchKey => {
-		const filtered = data.filter(element => element.id === 2);
-		setDataList(filtered);
-	};
 	return (
 		<>
 			<div className='table__container'>
@@ -31,7 +29,11 @@ export default function Table({ handleSearch }) {
 							type='text'
 							placeholder='search for interns'
 							value={searchElement}
-							onKeyDown={() => handleSearch(searchElement)}
+							onKeyDown={e => {
+								if (e.key === "Enter") {
+									handleSearch(searchElement);
+								}
+							}}
 							onChange={({ target }) => {
 								setSearchElement(target.value);
 							}}
@@ -46,53 +48,42 @@ export default function Table({ handleSearch }) {
 					<table>
 						<thead>
 							<tr>
-								<th> {} </th>
-								<th> {} </th>
-								<th onClick={id => handleSort(id)}> Id </th>
-								<th onClick={first_name => handleSort(first_name)}>
-									First Name
-								</th>
-								<th onClick={last_name => handleSort(last_name)}>
-									{" "}
-									Last Name
-								</th>
-								<th onClick={institution => handleSort(institution)}>
-									Institution
-								</th>
-								<th onClick={email => handleSort(email)}> Email </th>
-								<th onClick={phone => handleSort(phone)}> Phone</th>
-								<th onClick={projects => handleSort(projects)}>
-									{" "}
-									Projects{" "}
-								</th>
-								<th onClick={supervisor => handleSort(supervisor)}>
-									Academic Supervisor
-								</th>
+								<th> Avatar </th>
+								<th> Id </th>
+								<th>First Name</th>
+								<th> Last Name</th>
+								<th>Institution</th>
+								<th> Email </th>
+								<th> Phone</th>
+								<th> Projects </th>
+								<th>Academic Supervisor</th>
 							</tr>
 						</thead>
 						<tbody>
-							{data.map(item => (
+							{userList.map(item => (
 								<tr key={item.id}>
 									<td>
-										<input
-											type='checkbox'
-											value={item}
-											onChange={({ target }) => {
-												setCheckedItem(target.value);
-											}}
-										/>
-									</td>
-									<td>
-										{<img src='/images/admin.jpg' alt='avatar' />}
+										{
+											<img
+												src={`/images/avatars/${
+													Math.floor(Math.random() * 5) + 1
+												}.png`}
+												alt='avatar'
+											/>
+										}
 									</td>
 									<td> {item.id} </td>
 									<td> {item.first_name} </td>
 									<td> {item.last_name} </td>
 									<td> {item.institution} </td>
 									<td> {item.email} </td>
-									<td> {item.phone} </td>
-									<td> {item.projects} </td>
-									<td> {item["academic supervisor"]} </td>
+									<td> {item.phone || "Unknown"} </td>
+									<td> {item.projects || "Unassigned"} </td>
+									<td>
+										{" "}
+										{item["academic supervisor"] ||
+											"Not Provided"}{" "}
+									</td>
 								</tr>
 							))}
 						</tbody>

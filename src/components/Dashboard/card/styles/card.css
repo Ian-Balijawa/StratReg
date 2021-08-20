@@ -8,12 +8,19 @@
 .card {
 	margin: 1rem 0;
 	border: 1px solid rgb(236, 236, 236);
-	width: 25rem;
 	border-radius: 10px;
-	display: flex;
 	cursor: pointer;
-	flex-direction: column;
 	justify-content: center;
+
+	width: 20%;
+	background-color: #eee;
+	float: none;
+	height: 90%;
+	margin-bottom: 1rem;
+	margin-top: 0.25%;
+	margin-left: 1rem;
+	display: inline-block;
+	zoom: 1;
 }
 
 .card:hover {

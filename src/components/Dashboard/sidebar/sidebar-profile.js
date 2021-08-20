@@ -9,7 +9,7 @@ const SidebarProfile = () => {
 
 	return (
 		<div className='sidebar__profile'>
-			<img src='/images/admin.jpg' alt='' />
+			<img src={`/images/avatars/${user.photoURL}.png`} alt='profile_picture' />
 			<div className='sidebar__profile__text'>
 				<p>Welcome {user.displayName || "Intern"}</p>
 				{/* <p>{}</p> */}

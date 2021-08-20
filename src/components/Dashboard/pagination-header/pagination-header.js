@@ -3,7 +3,7 @@ const PaginationHeader = () => {
 	return (
 		<div className='card__container__header'>
 			<div className='card__header'>
-				<p>Hot ticket</p>
+				<p>Internship Students</p>
 			</div>
 
 			<div className='card__pagination'>

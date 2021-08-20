@@ -10,6 +10,7 @@ const Signup = () => {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [emailAddress, setEmailAddress] = useState("");
+	const [phone, setPhone] = useState("");
 	const [password, setPassword] = useState("");
 	const [repassword, setRepassword] = useState("");
 	const [course, setCourse] = useState("");
@@ -34,6 +35,7 @@ const Signup = () => {
 				.createUserWithEmailAndPassword(emailAddress, password);
 			result.user.updateProfile({
 				displayName: firstName || "user",
+				phoneNumber: phone,
 				photoURL: Math.floor(Math.random() * 5) + 1,
 			});
 
@@ -82,6 +84,12 @@ const Signup = () => {
 							type='email'
 							value={emailAddress}
 							onChange={({ target }) => setEmailAddress(target.value)}
+						/>
+						<Form.Input
+							placeholder='Phone/WhatsApp'
+							type='text'
+							value={phone}
+							onChange={({ target }) => setPhone(target.value)}
 						/>
 						<Form.Input
 							placeholder='password'

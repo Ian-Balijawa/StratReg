@@ -9,11 +9,14 @@
 }
 
 .card__intern__preview {
-	height: 18rem;
-	display: flex;
-	flex-direction: row;
-	overflow-x: visible;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
+	width: 100%;
+	max-width: 1100px;
+	margin-left: 3rem;
+	background-color: rgba(235, 235, 235, 0.267);
+	white-space: nowrap;
+	position: relative;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	margin-bottom: -9.4rem;
+	-webkit-overflow-scrolling: touch;
 }

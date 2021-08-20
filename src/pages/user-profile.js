@@ -1,9 +1,20 @@
+import { useContext } from "react";
 import PaginationHeader from "./../components/Dashboard/pagination-header/pagination-header";
 import HeaderDashboard from "./../components/Dashboard/HeaderDashboard/header-dashboard";
 import Sidebar from "./../components/Dashboard/sidebar/sidebar";
+import { FirebaseContext } from "../context/firebase";
 import "./styles/profile.css";
+import useUsers from "../hooks/use-users";
 
 const UserProfile = () => {
+	const users = useUsers();
+	const { firebase } = useContext(FirebaseContext);
+	const user = firebase.auth().currentUser || {};
+
+	const activeUser = users.find(u => u.email === user.email);
+
+	console.log(activeUser);
+
 	return (
 		<div className='container'>
 			<Sidebar />
@@ -15,34 +26,37 @@ const UserProfile = () => {
 					</div>
 					<div className='profile__container'>
 						<div className='profile__card'>
-							<img src='/images/admin.jpg' alt='profile pic' />
-							<p> Ian Balijawa </p>
+							<img
+								src={`/images/avatars/${user.photoURL}.png`}
+								alt='profile pic'
+							/>
+							<p> {`${activeUser.first_name} ${activeUser.last_name}`} </p>
 						</div>
 						<div className='user__info'>
 							<div>
 								<p>First Name</p>
-								<p>IAN </p>
+								<p>{`${activeUser.first_name}`} </p>
 							</div>
 							<div>
 								<p>Last Name</p>
-								<p>BALIJAWA </p>
+								<p>{`${activeUser.last_name.toUpperCase()}`} </p>
 							</div>
 							<div>
 								<p>Phone</p>
-								<p>0756008970 </p>
+								<p>{`${activeUser.phone || "Unknown"}`} </p>
 							</div>
 							<div>
-								<p>Email Address</p>
-								<p>ianbalijawa16@gmail.com</p>
+								<p>Email</p>
+								<p>{`${activeUser.email}`}</p>
 							</div>
 
 							<div>
 								<p>Institution</p>
-								<p>Makerere university</p>
+								<p>{`${activeUser.institution}`}</p>
 							</div>
 							<div>
 								<p>Course</p>
-								<p>Computer Science</p>
+								<p>{`${activeUser.first_name}`} </p>
 							</div>
 						</div>
 					</div>

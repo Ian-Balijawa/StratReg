@@ -18,9 +18,6 @@ const Intern = () => {
 
 					<div className='card__intern__preview'>
 						<Card />
-						<Card />
-						<Card />
-						<Card />
 					</div>
 
 					<div className='main__intern__table'>

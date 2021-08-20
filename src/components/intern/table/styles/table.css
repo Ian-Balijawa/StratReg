@@ -84,14 +84,14 @@ tbody th {
 	cursor: pointer;
 }
 
-tbody tr {
-	background: #ffff;
+tbody tr:nth-child(odd) {
+	background: rgba(235, 235, 235, 0.3);
 	height: 3rem;
 }
 tbody tr:hover {
-	background: rgb(211, 214, 214);
-	font-size: large;
-	font-weight: bold;
+	background: rgb(112, 174, 255);
+	/* font-size: large; */
+	color: white;
 }
 
 tbody td img {

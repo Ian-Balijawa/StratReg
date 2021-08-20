@@ -31,7 +31,10 @@ const HeaderDashboard = () => {
 				</div>
 				<div className='profile__name'>
 					<div>
-						<img src='/images/admin.jpg' alt='profile_picture' />
+						<img
+							src={`/images/avatars/${user.photoURL}.png`}
+							alt='profile_picture'
+						/>
 					</div>
 					<div>{user.displayName}</div>
 					<button

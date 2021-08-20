@@ -9,7 +9,7 @@
 }
 
 .profile__card {
-	border: 1px solid rgb(207, 207, 207);
+	/* border: 1px solid rgb(207, 207, 207); */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -33,7 +33,7 @@
 	justify-content: space-around;
 	margin: 5px;
 	flex-direction: column;
-	width: 50%;
+	width: 30%;
 }
 
 .profile__container .user__info > div {
