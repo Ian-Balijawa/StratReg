@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 import { FirebaseContext } from "../context/firebase";
+import { useHistory } from "react-router";
 import { HeaderContainer, FooterContainer } from "../containers";
 import { Form } from "../components";
 import * as ROUTES from "../constants/routes";
 
 const Signup = () => {
+	const history = useHistory();
 	const { firebase } = useContext(FirebaseContext);
 
 	const [firstName, setFirstName] = useState("");
@@ -51,6 +53,7 @@ const Signup = () => {
 				})
 				.then(ref => {
 					console.log(`added a user with id ${ref.id}`);
+					history.push(ROUTES.INTERNS);
 				});
 		} catch (error) {
 			setFirstName("");

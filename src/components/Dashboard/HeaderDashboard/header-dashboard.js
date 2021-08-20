@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { HOME } from "../../../constants/routes";
+import * as ROUTES from "../../../constants/routes";
 import { FirebaseContext } from "../../../context/firebase";
 import "./styles/header-dashboard.css";
 
@@ -12,7 +12,7 @@ const HeaderDashboard = () => {
 	return (
 		<div className='main__header'>
 			<div className='logo__input'>
-				<Link to={HOME}>
+				<Link to={ROUTES.HOME}>
 					<img src='/images/logo.png' alt='logo' />
 				</Link>
 			</div>
@@ -45,7 +45,7 @@ const HeaderDashboard = () => {
 								.auth()
 								.signOut()
 								.then(console.log("user logged out"));
-							history.push("/");
+							history.push(ROUTES.HOME);
 						}}>
 						Sign out
 						<svg

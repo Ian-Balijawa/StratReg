@@ -22,7 +22,7 @@ const Signin = () => {
 			.auth()
 			.signInWithEmailAndPassword(emailAddress, password)
 			.then(() => {
-				history.push(ROUTES.DASHBOARD);
+				history.push(ROUTES.INTERNS);
 			})
 			.catch(error => {
 				setPassword("");
